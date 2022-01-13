@@ -1,4 +1,4 @@
-package facades;
+/*package facades;
 
 import entities.Trip;
 import org.junit.jupiter.api.*;
@@ -79,3 +79,4 @@ public class TripFacadeTest {
 
 
 }
+*/
