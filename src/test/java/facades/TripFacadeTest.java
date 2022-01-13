@@ -57,7 +57,7 @@ public class TripFacadeTest {
 
     @Test
     public void testAFacadeMethod() throws Exception {
-        System.out.println("this test ran");
+        System.out.println("this test ran,");
         TripFacade tripFacade = new TripFacade();
 
     }
