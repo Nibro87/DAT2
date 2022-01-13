@@ -6,11 +6,14 @@ import java.util.List;
 
 @Entity
 public class Guide implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String guideName;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long guideId;
 
+
+    private String guideName;
     private String gender;
     private int birthYear;
     private String profile;
