@@ -38,7 +38,8 @@ public class TripFacadeTest {
         EntityManager em = emf.createEntityManager();
         try {
             em.getTransaction().begin();
-            em.createNamedQuery("RenameMe.deleteAllRows").executeUpdate();
+
+
             em.persist(new Trip("tivoli","13-01","21.00","rådhuset","2 timer","penge"));
 
 
