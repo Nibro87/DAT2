@@ -47,6 +47,12 @@ public class User implements Serializable {
     return rolesAsStrings;
   }
 
+  @ManyToMany
+  private List<Trip> tripList = new ArrayList<>();
+
+
+
+
   public User() {}
 
   //TODO Change when password is hashed
