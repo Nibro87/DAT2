@@ -24,22 +24,23 @@ public class TripFacade {
         return instance;
     }
 
+    public static Trip createTrip(Trip trip) {
+        EntityManager em = emf.createEntityManager();
+        try{
+            em.getTransaction().begin();
+            em.persist(trip);
+            em.getTransaction().commit();
+            return trip;
 
-   public Trip createTrip(Trip trip){
-
-       EntityManager em = emf.createEntityManager();
-       try{
-           em.getTransaction().begin();
-           em.persist(trip);
-           em.getTransaction().commit();
-           return trip;
-
-       }finally {
-           em.close();
-       }
+        }finally {
+            em.close();
+        }
+    }
 
 
-       }
+
+
+
 
 
 
@@ -57,8 +58,45 @@ public class TripFacade {
     }
 
 
+    public Trip deleteById(Long tripId){
+
+        EntityManager em = emf.createEntityManager();
+
+        Trip trip = em.find(Trip.class,tripId);
+
+        try {
+            em.getTransaction().begin();
+            em.remove(trip);
+            em.getTransaction().commit();
+            return trip;
+        } finally {
+            em.close();
+
+        }
+
+
+
+        }
+
+    public Trip findByID(Long tripId) {
+
+        EntityManager em = emf.createEntityManager();
+
+        Trip trip = em.find(Trip.class, tripId);
+
+
+        return trip;
 
     }
+
+
+
+
+    }
+
+
+
+
 
 
 

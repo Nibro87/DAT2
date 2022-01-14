@@ -15,7 +15,7 @@ public class Guide implements Serializable {
 
     private String guideName;
     private String gender;
-    private int birthYear;
+    private String birthYear;
     private String profile;
     private String image;
 
@@ -23,6 +23,15 @@ public class Guide implements Serializable {
     private List<Trip> tripList;
 
     public Guide() {
+    }
+
+    public Guide(String guideName, String gender, String birthYear, String profile, String image) {
+        this.guideName = guideName;
+        this.gender = gender;
+        this.birthYear = birthYear;
+        this.profile = profile;
+        this.image = image;
+
     }
 
     public String getGuideName() {
@@ -41,12 +50,28 @@ public class Guide implements Serializable {
         this.gender = gender;
     }
 
-    public int getBirthYear() {
+    public long getGuideId() {
+        return guideId;
+    }
+
+    public void setGuideId(long guideId) {
+        this.guideId = guideId;
+    }
+
+    public String getBirthYear() {
         return birthYear;
     }
 
-    public void setBirthYear(int birthYear) {
+    public void setBirthYear(String birthYear) {
         this.birthYear = birthYear;
+    }
+
+    public List<Trip> getTripList() {
+        return tripList;
+    }
+
+    public void setTripList(List<Trip> tripList) {
+        this.tripList = tripList;
     }
 
     public String getProfile() {
